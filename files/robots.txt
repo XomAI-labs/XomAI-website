@@ -1,0 +1,9 @@
+# XomAI / ERIX — robots.txt
+# Placeholder domain: replace YOUR-OFFICIAL-DOMAIN.example below (and in
+# sitemap.xml / index.html's canonical + Open Graph tags) once the real
+# domain is registered. Place this file at the site root.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://YOUR-OFFICIAL-DOMAIN.example/sitemap.xml
