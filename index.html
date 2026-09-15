@@ -14,8 +14,8 @@
   ===========================================================
 -->
 
-<title>XomAI — Building Adaptive AI | ERIX</title>
-<meta name="description" content="XomAI is building ERIX, an AI product exploring verified behavioral learning — a way for AI to learn behavioral patterns, verify them, monitor outcomes, and decide what should actually be adopted.">
+<title>XomAI — ERIX: Verified Behavioral Learning for AI</title>
+<meta name="description" content="XomAI is building ERIX: an AI behavioral-learning layer that verifies learned behavior and monitors outcomes before adoption. Join the early access list.">
 <link rel="canonical" href="https://YOUR-OFFICIAL-DOMAIN.example/">
 <meta name="theme-color" content="#08090b">
 <meta name="robots" content="index, follow">
@@ -23,19 +23,25 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="XomAI">
-<meta property="og:title" content="XomAI — Building Adaptive AI | ERIX">
-<meta property="og:description" content="ERIX is XomAI's first AI product: a research prototype exploring verified behavioral learning, where learned behavior is verified and monitored before it's adopted.">
+<meta property="og:title" content="XomAI — ERIX: Verified Behavioral Learning for AI">
+<meta property="og:description" content="ERIX, XomAI's first product, explores verified behavioral learning — behavior is verified and monitored before it's adopted. Currently in early development.">
 <meta property="og:url" content="https://YOUR-OFFICIAL-DOMAIN.example/">
 <meta property="og:image" content="https://YOUR-OFFICIAL-DOMAIN.example/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="XomAI — ERIX: Verified Behavioral Learning">
+<meta property="og:locale" content="en_US">
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="XomAI — Building Adaptive AI | ERIX">
-<meta name="twitter:description" content="ERIX is XomAI's first AI product: verified behavioral learning for AI, currently in early development.">
+<meta name="twitter:title" content="XomAI — ERIX: Verified Behavioral Learning for AI">
+<meta name="twitter:description" content="ERIX by XomAI: verified behavioral learning for AI, currently in early development. Join the early access list.">
 <meta name="twitter:image" content="https://YOUR-OFFICIAL-DOMAIN.example/og-image.png">
+<meta name="twitter:image:alt" content="XomAI — ERIX: Verified Behavioral Learning">
 
-<!-- Favicon: a simple node mark consistent with the ERIX engine motif, no separate logo asset -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308090b'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%235fe0ea' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='1.8' fill='%235fe0ea'/%3E%3C/svg%3E">
+<!-- Favicon: real standalone asset (same node mark as before), see favicon.svg -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" href="favicon.svg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -111,6 +117,12 @@
   p{ color:var(--text-dim); line-height:1.65; margin:0; }
   a{ color:inherit; text-decoration:none; }
   ::selection{ background:var(--cyan-dim); color:#04141a; }
+
+  /* Visually hidden but screen-reader accessible (a11y labels only, no visual change) */
+  .sr-only{
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+  }
 
   @media (prefers-reduced-motion: reduce){
     *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
@@ -387,7 +399,7 @@
   @media (max-width:860px){ .research-grid{ grid-template-columns:1fr 1fr; } }
   @media (max-width:560px){ .research-grid{ grid-template-columns:1fr; } }
   .research-cell{ background:var(--bg); padding:28px 24px; }
-  .research-cell h4{ font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:600; margin-bottom:10px; }
+  .research-cell h3{ font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:600; margin-bottom:10px; }
   .research-cell p{ font-size:14px; }
 
   /* ---------- VISION ---------- */
@@ -526,6 +538,8 @@
   </div>
 </nav>
 
+<main id="main-content">
+
 <!-- HERO -->
 <header id="hero">
   <div class="wrap hero-grid">
@@ -540,7 +554,7 @@
     </div>
 
     <div class="engine-frame">
-      <svg viewBox="0 0 400 400">
+      <svg viewBox="0 0 400 400" role="img" aria-label="Diagram of the ERIX cycle: observe, verify, monitor, improve, orbiting a central core">
         <defs>
           <path id="orbitPath" d="M 200 90 A 110 110 0 1 1 199.9 90" fill="none"/>
         </defs>
@@ -649,7 +663,7 @@
       </div>
       <div class="stage-visual" id="stageVisual">
         <div class="status-chip" id="stageStatus">STATUS: IDLE</div>
-        <svg viewBox="0 0 100 100" id="stageSvg"></svg>
+        <svg viewBox="0 0 100 100" id="stageSvg" aria-hidden="true"></svg>
         <div class="stage-visual-label" id="stageVisualLabel">Select a stage</div>
       </div>
     </div>
@@ -727,7 +741,7 @@
         <div class="metric-cell"><div class="mv">LOW</div><div class="mk">DRIFT DETECTED</div></div>
       </div>
       <div class="graph-area">
-        <svg viewBox="0 0 600 160" preserveAspectRatio="none" id="monitorGraph"></svg>
+        <svg viewBox="0 0 600 160" preserveAspectRatio="none" id="monitorGraph" aria-hidden="true"></svg>
       </div>
     </div>
   </div>
@@ -774,12 +788,12 @@
     <p style="margin-top:16px; max-width:600px;">XomAI is exploring the mechanisms that would let a controlled behavioral layer work in practice. None of these problems are solved — they're the open questions we're working through.</p>
 
     <div class="research-grid">
-      <div class="research-cell"><h4>Behavioral learning</h4><p>Identifying candidate patterns worth considering, without assuming they're worth keeping.</p></div>
-      <div class="research-cell"><h4>Verification</h4><p>Testing whether a candidate behavior actually satisfies defined requirements.</p></div>
-      <div class="research-cell"><h4>Outcome monitoring</h4><p>Tracking accepted behaviors after adoption, not just at the moment of approval.</p></div>
-      <div class="research-cell"><h4>Controlled adaptation</h4><p>Letting behavior evolve without letting it drift unchecked.</p></div>
-      <div class="research-cell"><h4>Behavioral memory</h4><p>Representing accepted behavior as structured, inspectable records.</p></div>
-      <div class="research-cell"><h4>Human-defined boundaries</h4><p>Keeping the definition of acceptable behavior in human hands.</p></div>
+      <div class="research-cell"><h3>Behavioral learning</h3><p>Identifying candidate patterns worth considering, without assuming they're worth keeping.</p></div>
+      <div class="research-cell"><h3>Verification</h3><p>Testing whether a candidate behavior actually satisfies defined requirements.</p></div>
+      <div class="research-cell"><h3>Outcome monitoring</h3><p>Tracking accepted behaviors after adoption, not just at the moment of approval.</p></div>
+      <div class="research-cell"><h3>Controlled adaptation</h3><p>Letting behavior evolve without letting it drift unchecked.</p></div>
+      <div class="research-cell"><h3>Behavioral memory</h3><p>Representing accepted behavior as structured, inspectable records.</p></div>
+      <div class="research-cell"><h3>Human-defined boundaries</h3><p>Keeping the definition of acceptable behavior in human hands.</p></div>
     </div>
   </div>
 </section>
@@ -808,16 +822,20 @@
     <span class="label">Early Access</span>
     <h2 class="early-head" style="margin-top:20px;">Help us explore what comes next.</h2>
     <p class="early-desc">ERIX is currently being developed and will initially be tested with a selected group of early users. Join the list to follow the project and register your interest.</p>
-    <form class="early-form" id="earlyForm">
-      <input type="text" class="early-input" placeholder="Name (optional)" id="earlyName">
-      <input type="email" class="early-input" placeholder="Email address" required id="earlyEmail">
-      <select class="early-input" id="earlyInterest" required>
+    <form class="early-form" id="earlyForm" aria-label="Join the ERIX early access list">
+      <label class="sr-only" for="earlyName">Name (optional)</label>
+      <input type="text" class="early-input" placeholder="Name (optional)" id="earlyName" name="name" autocomplete="name">
+      <label class="sr-only" for="earlyEmail">Email address</label>
+      <input type="email" class="early-input" placeholder="Email address" required id="earlyEmail" name="email" autocomplete="email">
+      <label class="sr-only" for="earlyInterest">What are you interested in?</label>
+      <select class="early-input" id="earlyInterest" name="interest" required>
         <option value="" disabled selected>What are you interested in?</option>
         <option value="early-access">Testing ERIX early</option>
         <option value="research">Research / collaboration</option>
         <option value="updates">Just staying updated</option>
       </select>
-      <textarea class="early-input" id="earlyMessage" rows="3" placeholder="Anything you'd like us to know? (optional)"></textarea>
+      <label class="sr-only" for="earlyMessage">Anything you'd like us to know? (optional)</label>
+      <textarea class="early-input" id="earlyMessage" name="message" rows="3" placeholder="Anything you'd like us to know? (optional)"></textarea>
       <button type="submit" class="btn btn-primary">Join Early Access →</button>
     </form>
     <p class="early-note mono">Prototype form — not yet connected to a live system. Submissions aren't stored or sent anywhere yet.</p>
@@ -876,6 +894,8 @@
     <p style="margin-top:28px; max-width:600px; font-size:13.5px;">No claims of GDPR/CCPA compliance, encryption, or automatic deletion are made here, because none of that has been implemented yet. If you have questions about this page, reach out via <a href="#contact" style="color:var(--cyan);">Contact</a>.</p>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="wrap">
